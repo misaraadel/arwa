@@ -1809,6 +1809,81 @@ header .contain .swiper-wrapper {
 .form-contain .form-group .from-input .form-control:hover, .form-contain .form-group .from-input .form-control:focus {
   border-color: #388B9F;
 }
+.form-contain .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  cursor: pointer;
+  position: relative;
+}
+.form-contain .wrapper .radio-check {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 3px;
+  border: 1px solid var(--main-color) !important;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 9;
+}
+.form-contain .wrapper .radio-check.radio-circle {
+  border-radius: 50%;
+}
+.form-contain .wrapper .radio-check::after, .form-contain .wrapper .radio-check::before {
+  content: "";
+  position: absolute;
+  transition: all 0.2s linear;
+}
+.form-contain .wrapper .radio-check::after {
+  width: 100%;
+  height: 0px;
+  background-color: var(--main-color);
+  z-index: -2;
+  top: 0;
+  left: 0;
+}
+.form-contain .wrapper .radio-check::before {
+  background: url("../images/icons/check.svg") center/contain no-repeat;
+  width: 15px;
+  height: 15px;
+  transform: scale(0);
+  z-index: -1;
+  top: calc(50% - 7.5px);
+  left: calc(50% - 7.5px);
+}
+.form-contain .wrapper .radio-check:checked::after {
+  height: 100%;
+}
+.form-contain .wrapper .radio-check:checked::before {
+  transform: scale(1);
+}
+.form-contain .wrapper .radio-title {
+  color: #000;
+  font-size: 16px;
+  font-weight: 900;
+  -webkit-margin-start: 10px;
+          margin-inline-start: 10px;
+  cursor: pointer;
+  margin-bottom: 0px !important;
+}
+.form-contain .wrapper .radio-title.span-data {
+  font-size: 13px;
+  font-weight: 700;
+}
+.form-contain .wrapper .radio-title.small-title {
+  font-weight: 500;
+  -webkit-margin-end: 10px;
+          margin-inline-end: 10px;
+}
+.form-contain .wrapper .radio-title span {
+  font-weight: 900;
+  color: var(--secondary-color);
+  font-size: 16px;
+}
 .form-contain .buttons-contain {
   width: 100%;
   margin-top: 20px;

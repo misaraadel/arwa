@@ -843,6 +843,92 @@ header {
     }
   }
 
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    cursor: pointer;
+    position: relative;
+
+    .radio-check {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 25px;
+      height: 25px;
+      border-radius: 3px;
+      border: 1px solid var(--main-color) !important;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      z-index: 9;
+
+      &.radio-circle {
+        border-radius: 50%;
+      }
+
+      &::after, &::before {
+        content: '';
+        position: absolute;
+        transition: all .2s linear;
+      }
+
+      &::after {
+        width: 100%;
+        height: 0px;
+        background-color: var(--main-color);
+        z-index: -2;
+        top: 0;
+        left: 0;
+      }
+
+      &::before {
+        background: url('../images/icons/check.svg') center / contain no-repeat;
+        width: 15px;
+        height: 15px;
+        transform: scale(0);
+        z-index: -1;
+        top: calc(50% - 7.5px);
+        left: calc(50% - 7.5px);
+      }
+
+      &:checked {
+        &::after {
+          height: 100%;
+        }
+
+        &::before {
+          transform: scale(1);
+        }
+      }
+    }
+
+    .radio-title {
+      color: #000;
+      font-size: 16px;
+      font-weight: 900;
+      margin-inline-start: 10px;
+      cursor: pointer;
+      margin-bottom: 0px !important;
+
+      &.span-data {
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      &.small-title {
+        font-weight: 500;
+        margin-inline-end: 10px;
+      }
+
+      span {
+        font-weight: 900;
+        color: var(--secondary-color);
+        font-size: 16px;
+      }
+    }
+  }
+
   .buttons-contain {
     width: 100%;
     margin-top: 20px;
